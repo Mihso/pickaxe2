@@ -16,7 +16,7 @@ export default function Home() {
 
   const handleKeyDown = async () => {
       setHide("hidden")
-      const chatHistory = [...conversation, { role: "user", content: 'Based on the keywords "' + value + '", give me a one paragraph prompt for you that at least answers role, style, and goal.' }]
+      const chatHistory = [...conversation, { role: "user", content: 'Based on the keywords "' + value + '", give me a one paragraph prompt that answers role, style, and goal.' }]
 
       const response = await fetch("/api/OpenAI", {
         method: "POST",
@@ -68,8 +68,15 @@ export default function Home() {
     if(hide !=="hidden"){
       return (
         <div className={hide} style={{marginTop:"20px"}}>
-        <p className="decoration-double" style={{fontSize: "20px"}}>Step 2</p>
-          <p>Look over your prompt, polish it, and turn it into an app</p>
+          <Image 
+          style={{display:"inline", fontSize: "20px"}} 
+          src="/edit.png" 
+          alt="edit logo" 
+          width={24} 
+          height={24} 
+          priority/>
+          {" "} Step 2
+          <p style={{padding:"10px"}}>Look over your prompt, polish it, and turn it into an app</p>
           <textarea style={{ border: "black", borderStyle: "solid", width: "100%", minHeight: "100px", font: "black"}}
                 className='textarea w-full max-w-xs input input-bordered'
                 defaultValue={prompter}
@@ -152,9 +159,17 @@ export default function Home() {
         </div>
 
       <div className="flex flex-col min-w-450 bg-white justify-center" style={{paddingLeft:"3%", font: "black"}}>
-      <p className="decoration-double" style={{fontSize: "20px"}}>Step 1</p>
-      <p>Turn your idea into an prompt</p>
-
+      <div>
+      <Image 
+          style={{display:"inline", fontSize: "20px"}} 
+          src="/zap.png" 
+          alt="zap logo" 
+          width={24} 
+          height={24} 
+          priority/>
+          {" "} Step 1
+      <p style={{padding:"10px"}}>Turn your idea into an prompt</p>
+      </div>
     <textarea style={{ border: "black", borderStyle: "solid", width:"100%", minHeight: "100px", font: "black"}}
             placeholder='In a phrase or two, describe what you want your bot to be good at.'
             className=' textarea w-full max-w-xs input input-bordered input-secondary'
