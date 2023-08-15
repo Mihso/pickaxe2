@@ -2,6 +2,26 @@
 @tailwind components;
 @tailwind utilities;
 
+@font-face {
+  font-family: "Real Head Pro";
+  src: url('./fonts/RealHeadPro-Bold.otf') format('.otf');
+  font-weight: Bold;
+}
+@font-face {
+  font-family: "Real Head Pro";
+  src: url('./fonts/RealHeadPro-Demibold.otf') format('.otf');
+  font-weight: Demibold;
+}
+@font-face {
+  font-family: 'Real Head Pro';
+  src:  url('./fonts/RealHeadPro-Regular.otf') format('.otf');
+  font-weight: regular;
+}
+@font-face {
+  font-family: "Real Head Pro";
+  src: url('./fonts/RealHeadPro-SemiLight.otf') format('.otf');
+  font-weight: SemiLight;
+}
 :root {
   --foreground-rgb: black;
   --background-start-rgb: 214, 219, 220;
@@ -26,17 +46,46 @@ nav{
 
 }
 
+
 body {
+  font: Real Head Pro;
+  font-weight: SemiLight;
+  size:16px;
+  line-height: 22px;
   color: rgb(var(--foreground-rgb));
   background: #F5F1E9;
   ;
-  /* background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb)); */
 }
+
+h1 {
+  font: Real Head Pro;
+  font-weight: Demibold;
+  size: 40px;
+  line-height: 50px;
+
+}
+
+h2 {
+  font:Real Head Pro;
+  font-weight: Demibold;
+  size: 32px;
+  line-height: 42px;
+}
+
+h3 {
+  font:Real Head Pro;
+  font-weight: Regular;
+  size: 24px;
+  line-height: 30px;
+}
+
+h4{
+  font:Real head Pro;
+  font-weight: Demibold;
+  size:24px;
+  line-height: 30px;
+}
+
 li {
   display: inline;
   padding-right: 12px;
@@ -51,7 +100,7 @@ button {
   padding-left: 16px;
   padding-right:16px;
   width:fit-content;
-  font: RealHeadPro;
+  font: Real Head Pro;
   font-weight: Demibold;
   size: 16px;
   line-height: 16px;
